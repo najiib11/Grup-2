@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="output.css">
+    <style>
+      
+        html {
+          transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class=" min-h-screen bg-gradient-to-b from-gray-200 to-gray-400 dark:from-gray-800 dark:to-gray-900 flex justify-center items-center relative transition duration-300">
+    
+    
+    <div class="absolute top-4 right-4">
+        <button id="btn" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow transition duration-300">
+            Dark Mode
+        </button>
+    </div>
+
+    
+    <div class="w-full max-w-md p-8 space-y-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg relative z-10 transition duration-300">
+        <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-gray-200 transition duration-300">Login</h2>
+        <form class="space-y-6">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 transition duration-300">Username</label>
+                <input type="text" id="email" name="email" class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 transition duration-300" placeholder="Enter your username">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 transition duration-300">Password</label>
+                <input type="password" id="password" name="password" class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 transition duration-300" placeholder="Enter your password">
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <input id="remember" name="remember" type="checkbox" class="h-4 w-4 text-green-400 focus:ring-green-400 border-gray-300 dark:border-gray-600 rounded">
+                    <label for="remember" class="ml-2 block text-sm text-gray-900 dark:text-gray-300 transition duration-300"> Remember me </label>
+                </div>
+                <a href="#" class="text-sm font-medium text-green-400 hover:text-green-600 dark:text-green-300 transition duration-300">Forgot password?</a>
+            </div>
+            <div>
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300">Sign in</button>
+            </div>
+            <div class="text-sm text-center">
+                <span class="text-gray-600 dark:text-gray-300">Belum punya akun?</span>
+                <a href="#" id="show-register" class="text-green-600 dark:text-green-300">Daftar</a>
+            </div>
+        </form>
+    </div>
+
+   
+    <script>
+        const getBtn = document.getElementById("btn");
+        let i = 0;
+        getBtn.addEventListener("click", () => {
+            document.documentElement.classList.toggle('dark');
+            if(i % 2 == 0){
+                getBtn.textContent = "Light mode";
+            }
+            else if(i % 2 > 0){
+                 getBtn.textContent = "Dark mode";
+            }
+            else if(i==10) i -= i;
+            i++;
+        });
+    </script>
+
+</body>
+</html>
